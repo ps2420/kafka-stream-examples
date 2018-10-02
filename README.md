@@ -8,6 +8,25 @@ Run the class KafkaStreamProducer under src/test/java it will post sample messag
 Run KafkaStreamConsumers.. and play around with joins.. stream, ktable, globalKtable.
 ```
  
+## Kafka Stream Producer
+```
+1. Mock the FxRateModel messages and post it on test-topic with tenor: test-topic
+2. Mock the FxRateModel messages and post it on test-topic2 with tenor: test-topic2
+
+later these topics will be used in KStream-KTable & KStream-GlobalKTable joining..
+``` 
+
+## Kafka Stream Consumer
+```
+Kafka Stream Consumer exposes different methods 
+1. KStremIterate
+2. KTableIterate
+3. KStream.KTable() join
+4. KStream.GlobalKTable() join.
+
+run respective methods to print out the messages on console..
+``` 
+
 ## Kafka commands
 ```
 bin/kafka-topics --list --zookeeper localhost:2181
