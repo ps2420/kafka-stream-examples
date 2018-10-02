@@ -1,0 +1,36 @@
+curl -X PUT "localhost:9200/twitter/_doc/1?refresh" -H 'Content-Type: application/json' -d'
+{
+    "user": "kimchy"
+}
+'
+
+curl -X GET "192.168.1.119:9200/search_pdf/search_pdf/_count" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+	    "bool": { //should try this for or caluse
+	      "must": [
+	        {
+	          "wildcard": {
+	              "content": {
+	                "value": "*dossi*"
+	              }
+	          }
+	        },
+	        {
+	           "wildcard": {
+	              "content": {
+	                "value": "*ossie*"
+	              }
+	          }
+	        },
+	        {
+	          "query_string" : {
+	              "query" : "content:Dossier" 
+	          }
+	        }
+	      ]
+	    }
+  }
+}
+'
+

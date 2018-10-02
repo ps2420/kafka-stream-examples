@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafka-consumer 
+        
+endpoints:
+  jmx:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    
+info:
+  version: ${APP_VERSION:0.0.1}
+  name: ${spring.application.name}      

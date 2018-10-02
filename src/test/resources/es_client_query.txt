@@ -1,0 +1,28 @@
+#https://www.timroes.de/2016/05/29/elasticsearch-kibana-queries-in-depth-tutorial/
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "wildcard": {
+              "content": {
+                "value": "*dossi*"
+              }
+          }
+        },
+        {
+           "wildcard": {
+              "content": {
+                "value": "*ossie*"
+              }
+          }
+        },
+        {
+          "query_string" : { 
+              "query" : "content:Dossier" 
+          }
+        }
+      ]
+    }
+  }
+}
